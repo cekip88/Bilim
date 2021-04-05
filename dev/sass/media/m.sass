@@ -1,0 +1,232 @@
+.section
+	+w($mobile-width)
+	margin: auto
+
+
+.button
+	@extend %transition
+	height: 30px
+	border-radius: 5px
+	background-color: $orange
+	font-family: $f_bold
+	color: $white
+	font-size: 12px
+	text-transform: uppercase
+	span
+		@extend %transition
+		display: block
+	&:active
+		box-shadow: inset 0 0 8px rgba($black,.5)
+
+.select
+	width: 175px
+	position: relative
+	&-head
+		@extend %dfi
+		@extend %transition
+		+font(14px,$f_bold,$white)
+		+wh(100%,30px)
+		padding: 0 12px
+		border-radius: 5px
+		background-color: $orange
+		font-size: 12px
+		text-transform: uppercase
+		&:active
+			box-shadow: inset 0 0 8px rgba($black,.5)
+	&-body
+		@extend %transition
+		max-height: 0
+		width: 100%
+		overflow: auto
+		background-color: $white
+		border-radius: 0 0 3px 3px
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+		position: absolute
+		top: 30px
+		left: 0
+		z-index: 100
+	&-option
+		@extend %transition
+		padding: 0 12px
+		height: 30px
+		width: 173px
+	&.active
+		.select
+			&-head
+				background-color: $viol
+			&-body
+				max-height: 120px
+	&.wide
+		width: 100%
+
+
+.title
+	+font(20px,$f_bold,$black)
+	text-align: center
+	text-transform: uppercase
+.subtitle
+	+font(16px,$f_bold,$black)
+	text-transform: uppercase
+
+
+.form
+	@extend %dfc
+	flex-direction: column
+	&-select,&-input
+		width: 218px
+		margin-bottom: 17px
+	&-input
+		height: 40px
+		padding: 0 12px
+		border: 1px solid $blue
+		border-radius: 3px
+		background-color: $white
+	&-submit
+		width: initial!important
+		padding: 0 17px
+
+
+.first-block
+	margin-top: 60px
+
+
+.head
+	width: 100%
+	padding: 10px 0
+	background-color: $white
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	&-row
+		@extend %dfa
+	&-logo
+		+font(18px,$f_heavy,$blue)
+		margin-right: 10px
+		white-space: pre
+		text-transform: uppercase
+	&-name
+		overflow: hidden
+		white-space: pre
+		text-overflow: ellipsis
+	&-logout
+		margin-left: 10px
+		margin-bottom: -4px
+
+
+.login
+	@extend %transition
+	+wh(100%)
+	background-color: $gray
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 10000
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+		.form
+			transform: scale(1)
+	&-title
+		+font(48px,$f_heavy,$blue)
+		opacity: .75
+		text-transform: uppercase
+	&-subtitle
+		margin-top: -8px
+		margin-bottom: 30px
+		text-transform: uppercase
+	&-form
+		@extend %transition
+		+wh(100%)
+		transform: scale(.5)
+		position: fixed
+
+
+.main-page
+	&-row
+		@extend %dfi
+		flex-wrap: wrap
+		margin-top: 20px
+	&-link
+		@extend %dfc
+		@extend %transition
+		width: calc(50% - 5px)
+		margin-bottom: 10px
+		padding: 30px 10px
+		border-radius: 3px
+		flex-direction: column
+		background-color: $white
+		img
+			height: 80px
+			margin-bottom: 10px
+		span
+			height: 32px
+			text-align: center
+			overflow: hidden
+
+
+.card
+	.title
+		margin-bottom: 20px
+	&-block
+		margin-bottom: 10px
+		padding: 13px 10px
+		border-radius: 7px
+		background-color: $white
+	.button
+		width: 100%
+	&-button
+		&-cont
+			margin-top: 10px
+			&.active
+				.card
+					&-form
+						max-height: 353px
+						padding: 17px 15px 12px
+					&-button
+						.button
+							background-color: $viol
+	&-form
+		@extend %transition
+		max-height: 0
+		padding: 0 15px
+		overflow: hidden
+
+
+.filter
+	&-select
+		margin-top: 10px
+
+.table
+	overflow: auto
+	&-head,&-row
+		@extend %dfa
+		height: 55px
+		span,div
+			padding-left: 15px
+	&-head
+		span
+			+font(16px,$f_bold,$black)
+			text-transform: uppercase
+	&-body
+	&-row
+		&:nth-child(2n - 1)
+			background-color: #F0F0F3
+	&-number
+		flex: 0 0 50px
+	&-action
+		flex: 0 0 100px
+		button
+			margin-right: 7px
+			&:last-child
+				margin-right: 0
+	&-second
+		flex: 0 0 200px
+	&-name,&-father
+		flex: 0 0 170px
+	&-class
+		flex: 0 0 130px
+	&-address
+		flex: 0 0 313px

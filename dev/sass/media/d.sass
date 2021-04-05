@@ -1,0 +1,58 @@
+%transition-desc
+	transition: .35s ease
+
+
+body
+	scrollbar-color: #D5D5D5 #ECECEC
+	scrollbar-width: 3px
+	::-webkit-scrollbar
+		+wh(6px)
+		background-color: transparent
+		border-radius: 3px
+	::-webkit-scrollbar-thumb
+		background-color: #D5D5D5
+		border-radius: 3px
+
+
+.section
+	+w($desktop-width)
+
+
+.button
+	&:hover
+		background-color: $viol
+
+.select
+	&-head
+		&:hover
+			background-color: $viol
+
+
+.head
+	&-logo,&-logout
+		@extend %transition-desc
+	&-logo
+		&:hover
+			color: $orange
+	&-logout
+		&:hover
+			transform: scale(1.15)
+
+
+.main-page
+	&-link
+		padding-top: 96px
+		padding-bottom: 43px
+		&:hover
+			background-color: $viol
+			color: $white
+		img
+			height: 150px
+			margin-bottom: 40px
+		span
+			height: initial
+
+
+.card
+	.title
+		margin-bottom: 44px

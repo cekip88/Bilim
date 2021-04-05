@@ -1,0 +1,71 @@
+%df-t
+	display: flex
+%dfa-t
+	@extend %df-t
+	align-items: center
+%dfi-t
+	@extend %dfa-t
+	justify-content: space-between
+%dfc-t
+	@extend %dfa-t
+	justify-content: center
+
+
+.section
+	+w($tablet-width)
+
+
+.select
+	&.wide
+		width: 175px
+
+.first-block
+	margin-top: 80px
+
+
+.head
+	padding: 20px 0
+	&-logo
+		margin-right: auto
+	&-logout
+		margin-left: 23px
+
+
+.card
+	&-block
+		margin-bottom: 18px
+		padding: 13px 17px
+		&.row
+			@extend %dfa-t
+	&-filter
+		&-form
+			margin-right: auto
+	&-button
+		width: 175px
+		margin: 0 auto
+		&-cont
+			width: 250px
+			margin-top: 0
+			margin-right: -38px
+			position: relative
+			&:last-child
+				.card-form
+					right: 21px
+			&.active
+				.card
+					&-form
+						background-color: $white
+						box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+	&-form
+		border-radius: 3px
+		position: absolute
+		top: 51px
+		z-index: 100
+
+
+.filter
+	&-select
+		margin-top: 0
+		margin-left: 36px
+		&:nth-child(2)
+			margin-left: auto

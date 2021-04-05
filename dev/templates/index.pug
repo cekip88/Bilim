@@ -1,0 +1,31 @@
+extends template/main
+append vars
+	-
+		page_title= 'Главная'
+block content
+	main
+		section.login.active
+			form.form.login-form
+				h2.login-title G-Teach
+				span.login-subtitle Электронный журнал
+				input(type='text' placeholder='Логин').form-input
+				input(type='password' placeholder='Пароль').form-input
+				button.button.form-submit
+					span Войти
+		section.first-block.main-page
+			.section
+				h1.title
+					span Главная страница
+				.main-page-row
+					a(href='#').main-page-link
+						+img('journal.svg')
+						span Журнал успеваемости
+					a(href='#').main-page-link
+						+img('teacher-woman.svg')
+						span Кабинет преподавателя
+					a(href='#').main-page-link
+						+img('pupil.svg')
+						span Картотека учащихся
+					a(href='#').main-page-link
+						+img('cabinet.svg')
+						span Мой кабинет

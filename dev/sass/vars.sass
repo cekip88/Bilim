@@ -1,0 +1,36 @@
+%df
+	display: flex
+%dfa
+	@extend %df
+	align-items: center
+%dfi
+	@extend %dfa
+	justify-content: space-between
+%dfc
+	@extend %dfa
+	justify-content: center
+%transition
+	transition: .35s ease
+
+\:root
+
+// --==[ Ширины ]==--
+$mobile-width: calc(100% - 20px)
+$tablet-width: 740px
+$tablet-large-width: 1000px
+$desktop-width: 1170px
+
+// --==[Шрифты]==--
+$f_reg: 'Geometria'
+$f_bold: 'Geometria-Bold'
+$f_heavy: 'Geometria-Heavy'
+
+// --==[ Цвета ]==--
+$black: #000
+$white: #fff
+$blue: #3490FE
+$viol: #88A3FF
+$gray: #E5E5E5
+$green: #00FF00
+$red: #FF0000
+$orange: #F79141

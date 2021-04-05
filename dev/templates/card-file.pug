@@ -1,0 +1,127 @@
+extends template/main
+append vars
+	-
+		page_title = 'Картотека'
+block content
+	main
+		section.first-block.card
+			.section
+				h1.title
+					span Картотека учащихся
+				.card-block.row
+					form.card-filter-form
+						.select.wide
+							input(type='hidden' name='class-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Класс
+								+img('select-arrow.svg')
+							.select-body
+								-for (let i = 1; i <= 4; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|а
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|б
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|в
+					.card-button-cont
+						.card-button
+							button(data-click-action='Front:showForm').button
+								span Добавить класс
+						form.form.card-form.active
+							.select.form-select
+								input(type='hidden' name='class-select')
+								button(type='button' data-click-action='Front:selectToActive').select-head
+									span Класс
+									+img('select-arrow.svg')
+								.select-body
+									-for (let i = 1; i <= 5; i++)
+										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+							.select.form-select
+								input(type='hidden' name='class-select')
+								button(type='button' data-click-action='Front:selectToActive').select-head
+									span Язык обучения
+									+img('select-arrow.svg')
+								.select-body
+									button(type='button' data-click-action='Front:selectToInactive').select-option Русский
+							input(type='text' placeholder='Название класса').form-input
+							button.button.form-submit
+								span Добавить
+					.card-button-cont
+						.card-button
+							button(data-click-action='Front:showForm').button
+								span Добавить ученика
+						form.form.card-form.active
+							.select.form-select
+								input(type='hidden' name='class-select')
+								button(type='button' data-click-action='Front:selectToActive').select-head
+									span Класс
+									+img('select-arrow.svg')
+								.select-body
+									-for(let i = 1; i <= 4; i++)
+										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+											|а
+										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+											|б
+										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+											|в
+							input(type='text' placeholder='Имя').form-input
+							input(type='text' placeholder='Фамилия').form-input
+							input(type='text' placeholder='Отчество').form-input
+							input(type='text' placeholder='Домашний адрес').form-input
+							button.button.form-submit
+								span Добавить
+				.card-block.row
+					h3.subtitle Фильтр:
+					.select.filter-select.wide
+						button(type='button' data-click-action='Front:selectToActive').select-head
+							span Пол
+							+img('select-arrow.svg')
+						.select-body
+							button(type='button' data-click-action='Front:selectToInactive').select-option Муж
+							button(type='button' data-click-action='Front:selectToInactive').select-option Жен
+					.select.filter-select.wide
+						button(type='button' data-click-action='Front:selectToActive').select-head
+							span Возраст
+							+img('select-arrow.svg')
+						.select-body
+							-for(let i = 6; i < 15; i++)
+								button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+				.card-block
+					.table
+						.table-head
+							span.table-number №
+							span.table-second Фамилия
+							span.table-name Имя
+							span.table-father Отчество
+							span.table-class Класс
+							span.table-address Адрес
+							span.table-action #
+						.table-body
+							.table-row
+								span.table-number 1
+								span.table-second Иванов
+								span.table-name Иван
+								span.table-father Иванович
+								span.table-class 1а
+								span.table-address ул.Металлистов д.150 кв.2
+								div.table-action
+									button
+										+img('pencil.svg')
+									button
+										+img('parents.svg')
+							.table-row
+								span.table-number 2
+								span.table-second Сидоров
+								span.table-name Сидор
+								span.table-father Сидорович
+								span.table-class 1а
+								span.table-address ул.Нуркена-Абдирова д.35 кв.122
+								div.table-action
+									button
+										+img('pencil.svg')
+									button
+										+img('parents.svg')
+
+
+
+
