@@ -1,8 +1,7 @@
 %transition-desc
 	transition: .35s ease
-
-
 body
+	font-size: 16px
 	scrollbar-color: #D5D5D5 #ECECEC
 	scrollbar-width: 3px
 	::-webkit-scrollbar
@@ -13,11 +12,8 @@ body
 		background-color: #D5D5D5
 		border-radius: 3px
 
-
 .section
 	+w($desktop-width)
-
-
 .button
 	&:hover
 		background-color: $viol
@@ -26,7 +22,6 @@ body
 	&-head
 		&:hover
 			background-color: $viol
-
 
 .head
 	&-logo,&-logout
@@ -37,7 +32,6 @@ body
 	&-logout
 		&:hover
 			transform: scale(1.15)
-
 
 .main-page
 	&-link
@@ -52,7 +46,55 @@ body
 		span
 			height: initial
 
-
 .card
 	.title
 		margin-bottom: 44px
+
+.pupil
+	&-photo
+		&-button.close
+			&:hover
+				transform: scale(1.15)
+		&-add:hover
+			&+.add
+				transform: scale(1.15)
+.journal
+	&-row
+		justify-content: flex-start
+		.block
+			margin-left: 18px
+			&:first-child
+				margin-left: 0
+	&-link
+		transition: .35s ease
+		&:hover
+			color: $blue
+	&-body
+		margin-top: 45px
+		padding: 34px 19px
+.list
+	table
+		button
+			@extend %transition-desc
+			&:hover
+				transform: scale(1.5)
+	&-pop
+		+wh(100%)
+		+dfc
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 10000
+		&-inner
+			width: 300px
+			padding: 25px 20px
+			background-color: $white
+			box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+			border-radius: 3px
+			input,textarea
+				padding: 12px
+				border: 1px solid $blue
+		.block
+			span
+				display: block
+				margin-bottom: 8px

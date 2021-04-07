@@ -4,7 +4,7 @@ append vars
 		page_title = 'Картотека'
 block content
 	main
-		section.first-block.card
+		section.card
 			.section
 				h1.title
 					span Картотека учащихся
@@ -18,12 +18,12 @@ block content
 							.select-body
 								-for (let i = 1; i <= 4; i++)
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|а
+										|а класс
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|б
+										|б класс
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|в
-					.card-button-cont
+										|в класс
+					.card-button-cont.cont
 						.card-button
 							button(data-click-action='Front:showForm').button
 								span Добавить класс
@@ -46,7 +46,7 @@ block content
 							input(type='text' placeholder='Название класса').form-input
 							button.button.form-submit
 								span Добавить
-					.card-button-cont
+					.card-button-cont.cont
 						.card-button
 							button(data-click-action='Front:showForm').button
 								span Добавить ученика
@@ -57,13 +57,13 @@ block content
 									span Класс
 									+img('select-arrow.svg')
 								.select-body
-									-for(let i = 1; i <= 4; i++)
+									-for (let i = 1; i <= 4; i++)
 										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-											|а
+											|а класс
 										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-											|б
+											|б класс
 										button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-											|в
+											|в класс
 							input(type='text' placeholder='Имя').form-input
 							input(type='text' placeholder='Фамилия').form-input
 							input(type='text' placeholder='Отчество').form-input
@@ -105,7 +105,7 @@ block content
 								span.table-class 1а
 								span.table-address ул.Металлистов д.150 кв.2
 								div.table-action
-									button
+									a(href='/pupil-file.html')
 										+img('pencil.svg')
 									button
 										+img('parents.svg')
@@ -117,7 +117,7 @@ block content
 								span.table-class 1а
 								span.table-address ул.Нуркена-Абдирова д.35 кв.122
 								div.table-action
-									button
+									a(href='/pupil-file.html')
 										+img('pencil.svg')
 									button
 										+img('parents.svg')

@@ -1,0 +1,75 @@
+extends template/main
+append vars
+	-
+		page_title = 'Карточка ученика'
+block content
+	main
+		section.pupil-page
+			.section
+				h1.title
+					span Иванов Иван Иванович
+				.pupil
+					.pupil-info
+						.pupil-buttons-cont
+							span ID: 40274
+							.pupil-buttons
+								.pupil-button-cont.cont
+									button(data-click-action='Front:showForm').button
+										span Родители
+									form.pupil-form.pupil-parents
+										.row
+											.col
+												.parents-photo
+													+img('mother.svg')
+												input(type='text' placeholder='ФИО').pupil-input
+												input(type='text' placeholder='Дата рождения').pupil-input
+												input(type='text' placeholder='E-mail').pupil-input
+												input(type='text' placeholder='Место работы').pupil-input
+												input(type='text' placeholder='Должность').pupil-input
+												input(type='text' placeholder='Адрес').pupil-input
+												input(type='text' placeholder='Рабочий телефон').pupil-input
+											.col
+												.parents-photo
+													+img('father.svg')
+												input(type='text' placeholder='ФИО').pupil-input
+												input(type='text' placeholder='Дата рождения').pupil-input
+												input(type='text' placeholder='E-mail').pupil-input
+												input(type='text' placeholder='Место работы').pupil-input
+												input(type='text' placeholder='Должность').pupil-input
+												input(type='text' placeholder='Адрес').pupil-input
+												input(type='text' placeholder='Рабочий телефон').pupil-input
+										.row
+											button.button
+												span Сохранить
+								.pupil-button-cont.cont
+									button.button
+										span Приказ
+								.pupil-button-cont.cont
+									button.button
+										span Изменить
+						form
+							.pupil-input-block
+								span Имя
+								input(type='text' placeholder='Иван').pupil-input
+							.pupil-input-block
+								span Фамилия
+								input(type='text' placeholder='Иванов').pupil-input
+							.pupil-input-block
+								span Отчество
+								input(type='text' placeholder='Иванович').pupil-input
+							.pupil-input-block
+								span Дата рождения
+								input(type='text' placeholder='24.08.2008').pupil-input
+							.pupil-input-block
+								span ИИН
+								input(type='text' placeholder='080824366460').pupil-input
+							.pupil-input-block
+								span Национальность
+								input(type='text' placeholder='Русский').pupil-input
+					.pupil-photo
+						+img('no-photo.svg')
+						button.pupil-photo-button.close
+							+img('close.svg')
+						input(type='file' accept="image/*").pupil-photo-add
+						.pupil-photo-button.add
+							+img('close.svg')

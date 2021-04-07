@@ -1,25 +1,14 @@
 .section
 	+w($tablet-large-width)
-
-
-body
-	font-size: 16px
-
-
 .title
 	font-size: 42px
-
-
-.first-block
-	margin-top: 150px
-
-
+main
+	padding-top: 150px
 .head
 	padding: 38px 0
 	&-logo
 		flex-basis: 111px
 		font-size: 24px
-
 
 .login
 	font-size: 14px
@@ -29,9 +18,37 @@ body
 		margin-bottom: 48px
 		font-size: 18px
 
-
 .main-page
 	&-row
 		margin-top: 35px
 	&-link
 		width: calc((100% - 51px) / 4)
+
+.pupil
+	flex-wrap: nowrap
+	&-photo
+		+wh(277px,220px)
+		flex: 0 0 277px
+		padding: 20px
+	&-info
+		margin-right: 20px
+		padding: 18px 16px 27px
+		order: 0
+
+.journal
+	&-row
+		.block
+			flex-basis: initial
+	&-body
+		margin-top: 30px
+		padding: 19px
+.list
+	table
+		div
+			padding: 19px 5px
+	th,td
+		&:first-child,&:last-child
+			div
+				width: 70px
+		&:nth-child(2)
+			width: 100%

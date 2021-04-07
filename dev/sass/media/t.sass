@@ -10,26 +10,20 @@
 	@extend %dfa-t
 	justify-content: center
 
-
 .section
 	+w($tablet-width)
-
-
 .select
 	&.wide
 		width: 175px
 
-.first-block
-	margin-top: 80px
-
-
+main
+	padding-top: 80px
 .head
 	padding: 20px 0
 	&-logo
 		margin-right: auto
 	&-logout
 		margin-left: 23px
-
 
 .card
 	&-block
@@ -62,10 +56,60 @@
 		top: 51px
 		z-index: 100
 
-
 .filter
 	&-select
 		margin-top: 0
 		margin-left: 36px
 		&:nth-child(2)
 			margin-left: auto
+
+.pupil
+	font-size: 14px
+	&-buttons
+		flex-wrap: nowrap
+		align-items: flex-start
+		justify-content: flex-end
+		position: relative
+		&-cont
+			margin-bottom: 20px
+			display: flex
+			align-items: center
+			span
+				margin-right: auto
+				flex-shrink: 0
+	&-button
+		&-cont
+			margin-top: 0
+			margin-left: 20px
+			flex-basis: 118px
+	&-form
+		background: #FFFFFF
+		box-shadow: -1px -1px 4px rgba(0,0,0,.25)
+		border-radius: 3px
+		position: absolute
+		top: 45px
+		right: 0
+		.button
+			width: 218px
+			margin-top: 17px
+	&-input
+		&-block
+			width: 353px
+			margin-bottom: 20px
+	&-photo
+		padding: 10px 250px
+	&-parents
+		width: 536px
+
+.journal
+	&-row
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		.block
+			display: flex
+			align-items: center
+			flex: 0 0 33%
+			height: 30px
+			margin-top: 0
+			text-align: left

@@ -1,0 +1,41 @@
+extends template/main
+append vars
+	-
+		page_title = 'Журнал успеваемости'
+block content
+	main
+		section.journal
+			.section
+				h1.title
+					span Журнал успеваемости
+				.journal-row
+					.block
+						.select.wide
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Класс
+								+img('select-arrow.svg')
+							.select-body
+								-for(let i = 1; i < 4; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| а
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| б
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| в
+					.block
+						a(href='#').journal-link
+							span Общий лист всеобуча
+					.block
+						a(href='#').journal-link
+							span Общие сведения
+					.block
+						a(href='#').journal-link
+							span Свод успеваемости
+					.block
+						a(href='#').journal-link.active
+							span Критеримальные оценки
+					.block
+						a(href='#').journal-link
+							span Настройки
+				.journal-body
+					

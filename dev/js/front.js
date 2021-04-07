@@ -18,7 +18,7 @@ class Front extends _front{
   showForm(clickData){
     const _ = this;
     let btn = clickData.item;
-    let container = btn.parentElement.parentElement;
+    let container = btn.closest('.cont');
     if (container.classList.contains('active')){
       container.classList.remove('active')
     } else {
