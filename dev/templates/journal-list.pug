@@ -9,7 +9,7 @@ block content
 				h1.title
 					span Журнал успеваемости
 				.journal-row
-					.block
+					.block.block-line
 						.select.wide
 							button(type='button' data-click-action='Front:selectToActive').select-head
 								span Класс
@@ -26,16 +26,16 @@ block content
 						a(href='#').journal-link.active
 							span Общий лист всеобуча
 					.block
-						a(href='#').journal-link
+						a(href='/journal-data.html').journal-link
 							span Общие сведения
 					.block
-						a(href='#').journal-link
+						a(href='/journal-schoolRecord.html').journal-link
 							span Свод успеваемости
 					.block
-						a(href='#').journal-link
+						a(href='/journal-marks.html').journal-link
 							span Критеримальные оценки
 					.block
-						a(href='#').journal-link
+						a(href='/journal-settings.html').journal-link
 							span Настройки
 				.journal-body
 					.list
@@ -83,7 +83,7 @@ block content
 												+img('eye.svg')
 											button
 												+img('delete.svg')
-						form.pop.list-pop.active
+						form.pop.list-pop
 							.pop-bgc(data-click-action='Front:closePop')
 							.list-pop-inner.pop-inner
 								h5.list-pop-title Иванов Иван Иванович

@@ -39,11 +39,13 @@ main
 .journal
 	&-row
 		padding: 0
+		justify-content: flex-start
 		.block
 			flex-basis: initial
 			height: 50px
-			&:first-child
-				padding-left: 18px
+			padding: 0 10px
+			&-line
+				padding: 0 0 0 18px
 				&::after
 					+af
 					+wh(1px,100%)
@@ -58,7 +60,10 @@ main
 			padding: 19px 5px
 	th,td
 		&:first-child,&:last-child
-			div
+			&,div
 				width: 70px
-		&:nth-child(2)
-			width: 100%
+
+.marks
+	&-table
+		div
+			height: 50px

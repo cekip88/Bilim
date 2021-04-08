@@ -9,7 +9,7 @@ block content
 				h1.title
 					span Журнал успеваемости
 				.journal-row
-					.block
+					.block.block-line
 						.select.wide
 							button(type='button' data-click-action='Front:selectToActive').select-head
 								span Класс
@@ -23,19 +23,95 @@ block content
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
 										| в
 					.block
-						a(href='#').journal-link
+						a(href='/journal-list.html').journal-link
 							span Общий лист всеобуча
 					.block
 						a(href='#').journal-link.active
 							span Общие сведения
 					.block
-						a(href='#').journal-link
+						a(href='/journal-schoolRecord.html').journal-link
 							span Свод успеваемости
 					.block
-						a(href='#').journal-link
+						a(href='/journal-marks.html').journal-link
 							span Критеримальные оценки
 					.block
-						a(href='#').journal-link
+						a(href='/journal-settings.html').journal-link
 							span Настройки
 				.journal-body
+					.list
+						table
+							thead
+								tr
+									th
+										div №
+									th
+										div Фамилия
+									th
+										div Имя
+									th
+										div Отчество
+									th
+										div Класс
+									th
+										div Адрес
+									th
+										div #
+							tbody
+								tr
+									td
+										div 1
+									td
+										div Иванов
+									td
+										div Иван
+									td
+										div Иванович
+									td
+										div 1б
+									td
+										div ул.Металлистов д.45 кв.122
+									td
+										div
+											//button(data-click-action='Front:showPop' data-target='list-pop')
+												+img('eye.svg')
+											//button
+												+img('delete.svg')
+								tr
+									td
+										div 1
+									td
+										div Иванов
+									td
+										div Иван
+									td
+										div Иванович
+									td
+										div 1б
+									td
+										div ул.Металлистов д.45 кв.122
+									td
+										div
+											//button(data-click-action='Front:showPop' data-target='list-pop')
+												+img('eye.svg')
+											//button
+												+img('delete.svg')
+								tr
+									td
+										div 1
+									td
+										div Иванов
+									td
+										div Иван
+									td
+										div Иванович
+									td
+										div 1б
+									td
+										div ул.Металлистов д.45 кв.122
+									td
+										div
+											//button(data-click-action='Front:showPop' data-target='list-pop')
+												+img('eye.svg')
+											//button
+												+img('delete.svg')
 					

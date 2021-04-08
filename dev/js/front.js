@@ -12,6 +12,7 @@ class Front extends _front{
       .on(_,'selectToInactive')
       .on(_,'showPop')
       .on(_,'closePop')
+      .on(_,'showMarkInput')
       .add(_.componentName,'showForm',_.showCardFileForm.bind(_));
 
   }
@@ -81,6 +82,12 @@ class Front extends _front{
     let target = clickData.item;
     let popBgc = target.closest(`.pop`);
     popBgc.classList.remove('active');
+  }
+
+  showMarkInput(clickData){
+    let btn = clickData.item;
+    let inpt = btn.previousElementSibling;
+    inpt.classList.add('active');
   }
 }
 new Front();

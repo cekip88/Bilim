@@ -9,7 +9,7 @@ block content
 				h1.title
 					span Журнал успеваемости
 				.journal-row
-					.block
+					.block.block-line
 						.select.wide
 							button(type='button' data-click-action='Front:selectToActive').select-head
 								span Класс
@@ -23,19 +23,35 @@ block content
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
 										| в
 					.block
-						a(href='#').journal-link
+						a(href='/journal-list.html').journal-link
 							span Общий лист всеобуча
 					.block
-						a(href='#').journal-link
+						a(href='/journal-data.html').journal-link
 							span Общие сведения
 					.block
-						a(href='#').journal-link
+						a(href='/journal-schoolRecord.html').journal-link
 							span Свод успеваемости
 					.block
-						a(href='#').journal-link.active
+						a(href='/journal-marks.html').journal-link.active
 							span Критеримальные оценки
 					.block
-						a(href='#').journal-link
+						a(href='/journal-settings.html').journal-link
 							span Настройки
 				.journal-body
+					.tabs
+						input(type='radio' name='tabs' checked)#tab-1
+						input(type='radio' name='tabs')#tab-2
+						input(type='radio' name='tabs')#tab-3
+						input(type='radio' name='tabs')#tab-4
+						.labels-row
+							label(for='tab-1') 1 четверть
+							label(for='tab-2') 2 четверть
+							label(for='tab-3') 3 четверть
+							label(for='tab-4') 4 четверть
+						.tabs-row
+							.tab.tab-1.marks.marks-mini
+								include parts/marks
+							.tab.tab-2
+							.tab.tab-3
+							.tab.tab-4
 					

@@ -64,18 +64,24 @@ body
 		justify-content: flex-start
 		.block
 			margin-left: 18px
-			&:first-child
-				margin-left: 0
+			padding: 0
 	&-link
 		transition: .35s ease
 		&:hover
 			color: $blue
 	&-body
 		margin-top: 45px
-		padding: 34px 19px
 .list
+	&-title
+		font-size: 20px
 	table
 		button
 			@extend %transition-desc
 			&:hover
 				transform: scale(1.5)
+
+.tabs
+.marks
+	&-table
+		div
+			height: 100px
