@@ -57,7 +57,7 @@ block content
 										div Иванов Иван Иванович
 									td
 										div
-											button
+											button(data-click-action='Front:showPop' data-target='list-pop')
 												+img('eye.svg')
 											button
 												+img('delete.svg')
@@ -68,7 +68,7 @@ block content
 										div Иванов Иван Иванович
 									td
 										div
-											button
+											button(data-click-action='Front:showPop' data-target='list-pop')
 												+img('eye.svg')
 											button
 												+img('delete.svg')
@@ -79,12 +79,13 @@ block content
 										div Иванов Иван Иванович
 									td
 										div
-											button
+											button(data-click-action='Front:showPop' data-target='list-pop')
 												+img('eye.svg')
 											button
 												+img('delete.svg')
-						form.list-pop
-							.list-pop-inner
+						form.pop.list-pop.active
+							.pop-bgc(data-click-action='Front:closePop')
+							.list-pop-inner.pop-inner
 								h5.list-pop-title Иванов Иван Иванович
 								.block
 									span Дата добавления в журнал
@@ -101,3 +102,6 @@ block content
 								.block
 									span Информация об отчислении удалении
 									textarea 14.08.2020
+								.block
+									a(href='/pupil-file.html').button
+										span К карточке

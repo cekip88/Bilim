@@ -4,18 +4,21 @@ class Front extends _front{
   constructor(){
     super();
     const _ = this;
+    _.componentName = 'Front';
     MainEventBus
       .on(_,'createOrderSuccess')
       .on(_,'createOrderFail')
       .on(_,'selectToActive')
       .on(_,'selectToInactive')
-      .on(_,'showForm');
+      .on(_,'showPop')
+      .on(_,'closePop')
+      .add(_.componentName,'showForm',_.showCardFileForm.bind(_));
 
   }
   createOrderSuccess(orderData){}
   createOrderFail(orderData){}
 
-  showForm(clickData){
+  showCardFileForm(clickData){
     const _ = this;
     let btn = clickData.item;
     let container = btn.closest('.cont');
@@ -23,7 +26,8 @@ class Front extends _front{
       container.classList.remove('active')
     } else {
       document.querySelectorAll(`*[data-click-action='Front:showForm']`).forEach(function (el){
-        el.parentElement.parentElement.classList.remove('active');
+        let cont = el.closest('.active');
+        if(cont) cont.classList.remove('active');
       })
       container.querySelectorAll('.select-head').forEach(function (el){
         _.selectToInactive({item:el},true)
@@ -31,7 +35,6 @@ class Front extends _front{
       container.classList.add('active')
     }
   }
-
   selectToActive(clickData){
     const _ = this;
     let
@@ -66,6 +69,18 @@ class Front extends _front{
 
     select.classList.remove('active');
     head.setAttribute('data-click-action','Front:selectToActive')
+  }
+
+  showPop(clickData){
+    let target = clickData.item;
+    let popClass = target.getAttribute('data-target');
+    let pop = document.querySelector(`.${popClass}`);
+    pop.classList.add('active');
+  }
+  closePop(clickData){
+    let target = clickData.item;
+    let popBgc = target.closest(`.pop`);
+    popBgc.classList.remove('active');
   }
 }
 new Front();

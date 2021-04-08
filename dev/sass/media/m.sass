@@ -4,6 +4,7 @@
 
 .button
 	@extend %transition
+	min-width: 118px
 	height: 30px
 	border-radius: 5px
 	background-color: $orange
@@ -224,6 +225,8 @@ main
 
 .pupil
 	@extend %df
+	margin-top: 10px
+	margin-bottom: 10px
 	flex-wrap: wrap
 	&-info,&-photo
 		width: 100%
@@ -252,6 +255,7 @@ main
 						padding-top: 12px
 						padding-bottom: 27px
 	&-input
+		width: 218px
 		padding: 12px
 		background-color: $white
 		border-radius: 3px
@@ -262,6 +266,8 @@ main
 			flex-wrap: wrap
 			&:last-child
 				margin-bottom: 0
+			span
+				flex: 0 0 100%
 	&-photo
 		@extend %dfc
 		height: 150px
@@ -354,5 +360,55 @@ main
 		button
 			&:first-child
 				margin-right: 5px
+	&-pop
+		&-title
+			font-family: $f_bold
+			font-size: 18px
+			text-transform: uppercase
+		&-inner
+			width: 300px
+			max-height: 80vh
+			padding: 25px 20px
+			background-color: $white
+			box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+			border-radius: 3px
+			overflow: auto
+			input,textarea
+				width: 218px
+				padding: 12px
+				border: 1px solid $blue
+				font-family: $f_reg
+				font-size: 14px
+			textarea
+				height: 80px
+				resize: none
+			a
+				@extend %dfc
+				width: 118px
+				margin: 0 auto
+		.block
+			margin-top: 18px
+			&>span
+				display: block
+				margin-bottom: 8px
 
-
+.pop
+	+wh(100%)
+	+dfc
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 10000
+	opacity: 0
+	visibility: hidden
+	@extend %transition
+	&.active
+		opacity: 1
+		visibility: visible
+	&-bgc
+		+wh(100%)
+		background-color: rgba(0,0,0,.2)
+		position: absolute
+	&-inner
+		position: relative
+		z-index: 1
