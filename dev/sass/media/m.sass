@@ -416,6 +416,7 @@ main
 		position: relative
 		z-index: 1
 .tabs
+	height: 100%
 	.labels-row
 		@extend %dfa
 		border-bottom: 1px solid $blue
@@ -427,6 +428,7 @@ main
 			text-align: center
 	&-row
 		@extend %df
+		height: calc(100% - 31px)
 		overflow: hidden
 		.tab
 			@extend %transition
@@ -448,8 +450,8 @@ main
 #tab-4:checked ~ .tabs-row .tab-3,#tab-4:checked ~ .tabs-row .tab-4
 	transform: translateX(-300%)
 .marks
-	overflow-x: auto
-	overflow-y: initial
+	height: 100%
+	overflow: auto
 	&-table
 		min-width: 100%
 		text-align: center
