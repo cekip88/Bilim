@@ -206,29 +206,30 @@ main
 		@extend %df
 		div,span
 			@extend %dfa
-			width: 150px
+			flex: 0 0 200px
 			height: 55px
 			padding-left: 15px
 	&-row
 		&:nth-child(2n - 1)
 			&,div,span
 				background-color: #F0F0F3
-	&-number
-		flex: 0 0 50px
-	&-action
-		flex: 0 0 100px
-		button,a
-			margin-right: 7px
-			&:last-child
-				margin-right: 0
-	&-second
-		flex: 0 0 200px
-	&-name,&-father
-		flex: 0 0 170px
-	&-class
-		flex: 0 0 130px
-	&-address
-		flex: 0 0 313px
+	.table
+		&-number
+			flex: 0 0 50px
+		&-action
+			flex: 0 0 100px
+			button,a
+				margin-right: 7px
+				&:last-child
+					margin-right: 0
+		&-second
+			flex: 0 0 200px
+		&-name,&-father
+			flex: 0 0 170px
+		&-class
+			flex: 0 0 130px
+		&-address
+			flex: 0 0 313px
 
 .pupil
 	@extend %df
