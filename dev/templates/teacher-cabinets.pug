@@ -1,0 +1,27 @@
+extends template/main
+append vars
+	-
+		page_title = 'Кабинет преподавателя'
+block content
+	main
+		section.journal
+			.section
+				h1.title
+					span Кабинет преподавателя
+				.journal-row
+					.block
+						a(href='/teacher-schedule.html').journal-link
+							span Расписание
+					.block
+						a(href='/teacher-leadership.html').journal-link
+							span Классное руководство
+					.block
+						a(href='/teacher-plans.html').journal-link
+							span Планы
+					.block
+						a(href='/teacher-cabinets.html').journal-link.active
+							span Мои кабинеты
+					.block
+						a(href='/teacher-settings.html').journal-link
+							span Настройки
+				.journal-body

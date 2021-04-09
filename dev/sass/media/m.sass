@@ -195,19 +195,24 @@ main
 
 .table
 	overflow: auto
-	&-head,&-row
-		@extend %dfa
-		height: 55px
-		span,div
-			padding-left: 15px
 	&-head
-		span
+		border-bottom: 1px solid $blue
+		span,div
 			+font(16px,$f_bold,$black)
+			margin-bottom: -1px
+			border-bottom: 1px solid $blue
 			text-transform: uppercase
-	&-body
+	&-row,&-head
+		@extend %df
+		div,span
+			@extend %dfa
+			width: 150px
+			height: 55px
+			padding-left: 15px
 	&-row
 		&:nth-child(2n - 1)
-			background-color: #F0F0F3
+			&,div,span
+				background-color: #F0F0F3
 	&-number
 		flex: 0 0 50px
 	&-action
@@ -458,23 +463,9 @@ main
 		min-width: 100%
 		text-align: center
 		font-size: 12px
-	.marks-head
-		.row
-			@extend %df
-			text-transform: uppercase
-			height: initial
-			border-bottom: 1px solid $blue
+		&-vertical
 			div
-				height: 180px
-				margin-bottom: -1px
-				font-family: $f_bold
-				border-bottom: 1px solid $blue
-				&:first-child,&:nth-child(2)
-					@extend %df
-					padding-bottom: 10px
-					align-items: flex-end
-					justify-content: center
-					font-size: 16px
+				height: 180px!important
 				&:nth-child(n + 3)
 					position: relative
 					span
@@ -484,6 +475,22 @@ main
 						left: -80px
 						transform: rotate(-90deg)
 						text-align: left
+	.marks-head
+		.row
+			@extend %df
+			text-transform: uppercase
+			height: initial
+			border-bottom: 1px solid $blue
+			div
+				margin-bottom: -1px
+				font-family: $f_bold
+				border-bottom: 1px solid $blue
+				&:first-child,&:nth-child(2)
+					@extend %df
+					padding-bottom: 10px
+					align-items: flex-end
+					justify-content: center
+					font-size: 16px
 	&-body
 		.row
 			&:nth-child(2n - 1)

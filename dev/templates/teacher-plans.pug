@@ -1,0 +1,50 @@
+extends template/main
+append vars
+	-
+		page_title = 'Кабинет преподавателя'
+block content
+	main
+		section.journal
+			.section
+				h1.title
+					span Кабинет преподавателя
+				.journal-row
+					.block
+						a(href='/teacher-schedule.html').journal-link
+							span Расписание
+					.block
+						a(href='/teacher-leadership.html').journal-link
+							span Классное руководство
+					.block
+						a(href='/teacher-plans.html').journal-link.active
+							span Планы
+					.block
+						a(href='/teacher-cabinets.html').journal-link
+							span Мои кабинеты
+					.block
+						a(href='/teacher-settings.html').journal-link
+							span Настройки
+				.journal-body
+					.table
+						.table-head
+							span.table-number №
+							span.table-second Фамилия
+							span.table-name Имя
+							span.table-father Отчество
+							span.table-class Класс
+							span.table-address Адрес
+						.table-body
+							.table-row
+								span.table-number 1
+								span.table-second Иванов
+								span.table-name Иван
+								span.table-father Иванович
+								span.table-class 1а
+								span.table-address ул.Металлистов д.150 кв.2
+							.table-row
+								span.table-number 2
+								span.table-second Сидоров
+								span.table-name Сидор
+								span.table-father Сидорович
+								span.table-class 1а
+								span.table-address ул.Нуркена-Абдирова д.35 кв.122

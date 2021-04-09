@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title = 'Журнал успеваемости'
+		page_title = 'Кабинет преподавателя'
 block content
 	main
 		section.journal
@@ -25,3 +25,36 @@ block content
 						a(href='/teacher-settings.html').journal-link
 							span Настройки
 				.journal-body
+					.schedule-row
+						.select
+							input(type='hidden' name='class-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Класс
+								+img('select-arrow.svg')
+							.select-body
+								button(type='button' data-click-action='Front:selectToInactive').select-option Все классы
+								-for (let i = 1; i <= 4; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|а класс
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|б класс
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|в класс
+						.select
+							input(type='hidden' name='change-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Класс
+								+img('select-arrow.svg')
+							.select-body
+								button(type='button' data-click-action='Front:selectToInactive').select-option Все классы
+								-for (let i = 1; i <= 4; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|а класс
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|б класс
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										|в класс
+						button.button
+							span Моё расписание
+						button.button
+							span 1А

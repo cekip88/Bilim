@@ -1,6 +1,6 @@
 .marks-table
 	.marks-head
-		.row
+		.row.marks-table-vertical
 			div
 				span №
 			div
@@ -20,63 +20,14 @@
 			div
 				span Математика
 	.marks-body
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
-		.row
-			div 1
-			div Иванов Иван Иванович
-			div 5
-			div 4
-			div 3
-			div 2
-			div 1
-			div 2
-			div 1
+		-for (let i = 0; i < 5; i++)
+			.row
+				div 1
+				div Иванов Иван Иванович
+				div 5
+				div 4
+				div 3
+				div 2
+				div 1
+				div 2
+				div 1
