@@ -22,7 +22,11 @@ body
 	&-head
 		&:hover
 			background-color: $viol
-
+	&-option
+		@extend %transition-desc
+		&:hover
+			color: $white
+			background-color: $orange
 .head
 	&-logo,&-logout
 		@extend %transition-desc
@@ -46,6 +50,11 @@ body
 		span
 			height: initial
 
+.table
+	button,a
+		@extend %transition-desc
+		&:hover
+			transform: scale(1.5)
 .card
 	.title
 		margin-bottom: 44px

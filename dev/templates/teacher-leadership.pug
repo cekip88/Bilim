@@ -25,3 +25,44 @@ block content
 						a(href='/teacher-settings.html').journal-link
 							span Настройки
 				.journal-body
+					.select
+						input(type='hidden' name='class-select')
+						button(type='button' data-click-action='Front:selectToActive').select-head
+							span Год
+							+img('select-arrow.svg')
+						.select-body
+							-for (let i = 2020; i <= 2030; i++)
+								button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+					.table
+						table
+							thead
+								tr
+									th
+										span №
+									th
+										span Предмет
+									th
+										span Класс
+									th
+										span Дата создания
+									th
+										span Период преподавания
+									th
+										div #
+							tbody
+								-for (let i = 0; i < 20; i++)
+									tr
+										td
+											span 1
+										td
+											span Физическая культура
+										td
+											span 2В
+										td
+											span 19.08.2020
+										td
+											span 2020-09-01: 2021-05-25
+										td
+											div
+												a(href='#')
+													+img('pencil.svg')

@@ -89,40 +89,79 @@ block content
 								button(type='button' data-click-action='Front:selectToInactive').select-option!=i
 				.card-block
 					.table
-						.table-head
-							span.table-number №
-							span.table-second Фамилия
-							span.table-name Имя
-							span.table-father Отчество
-							span.table-class Класс
-							span.table-address Адрес
-							span.table-action #
-						.table-body
-							.table-row
-								span.table-number 1
-								span.table-second Иванов
-								span.table-name Иван
-								span.table-father Иванович
-								span.table-class 1а
-								span.table-address ул.Металлистов д.150 кв.2
-								div.table-action
-									a(href='/pupil-file.html')
-										+img('pencil.svg')
-									button
-										+img('parents.svg')
-							.table-row
-								span.table-number 2
-								span.table-second Сидоров
-								span.table-name Сидор
-								span.table-father Сидорович
-								span.table-class 1а
-								span.table-address ул.Нуркена-Абдирова д.35 кв.122
-								div.table-action
-									a(href='/pupil-file.html')
-										+img('pencil.svg')
-									button
-										+img('parents.svg')
-
-
-
+						table
+							thead
+								tr
+									th
+										span №
+									th
+										span Фамилия
+									th
+										span Имя
+									th
+										span Отчество
+									th
+										span Класс
+									th
+										span Адрес
+									th
+										span #
+							tbody
+								tr
+									td
+										span 1
+									td
+										span Иванов
+									td
+										span Иван
+									td
+										span Иванович
+									td
+										span 1а
+									td
+										span ул.Металлистов д.150 кв.2
+									td
+										div
+											a(href='/pupil-file.html')
+												+img('pencil.svg')
+											button
+												+img('parents.svg')
+								tr
+									td
+										span 1
+									td
+										span Иванов
+									td
+										span Иван
+									td
+										span Иванович
+									td
+										span 1а
+									td
+										span ул.Металлистов д.150 кв.2
+									td
+										div
+											a(href='/pupil-file.html')
+												+img('pencil.svg')
+											button
+												+img('parents.svg')
+								tr
+									td
+										span 1
+									td
+										span Иванов
+									td
+										span Иван
+									td
+										span Иванович
+									td
+										span 1а
+									td
+										span ул.Металлистов д.150 кв.2
+									td
+										div
+											a(href='/pupil-file.html')
+												+img('pencil.svg')
+											button
+												+img('parents.svg')
 

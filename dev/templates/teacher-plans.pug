@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет преподавателя'
 block content
 	main
-		section.journal
+		section.journal.teacher
 			.section
 				h1.title
 					span Кабинет преподавателя
@@ -25,21 +25,29 @@ block content
 						a(href='/teacher-settings.html').journal-link
 							span Настройки
 				.journal-body
-					.table
-						.table-head
-							span.table-number №
-							span.table-second Фамилия
-							span.table-name Имя
-							span.table-father Отчество
-							span.table-class Класс
-							span.table-address Адрес
-							span Адрес Родителей
-						.table-body
-							.table-row
-								span.table-number 1
-								span.table-second Иванов
-								span.table-name Иван
-								span.table-father Иванович
-								span.table-class 1а
-								span.table-address ул.Металлистов д.150 кв.2
-								span ул.Металлистов д.150 кв.2
+					.plans-row
+						.select
+							input(type='hidden' name='class-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Год
+								+img('select-arrow.svg')
+							.select-body
+								-for (let i = 2020; i <= 2030; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+						button.button(data-click-action='Front:showPop' data-target='plans-add')
+							span Добавить
+					.tabs
+						input(type='radio' name='tabs' checked)#tab-1
+						input(type='radio' name='tabs')#tab-2
+						input(type='radio' name='tabs')#tab-3
+						input(type='radio' name='tabs')#tab-4
+						.labels-row
+							label(for='tab-1') 1 четверть
+							label(for='tab-2') 2 четверть
+							label(for='tab-3') 3 четверть
+							label(for='tab-4') 4 четверть
+						.tabs-row
+							.tab.tab-1
+							.tab.tab-2
+							.tab.tab-3
+							.tab.tab-4
