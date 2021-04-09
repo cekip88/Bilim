@@ -51,7 +51,34 @@ block content
 						.tabs-row
 							.tab.tab-1.marks.marks-mini
 								include parts/marks
-							.tab.tab-2
-							.tab.tab-3
-							.tab.tab-4
+							.tab.tab-2.marks.marks-mini
+								include parts/marks
+							.tab.tab-3.marks.marks-mini
+								include parts/marks
+							.tab.tab-4.marks.marks-mini
+								include parts/marks
+						.add-mark.pop
+							form.add-mark-inner.pop-inner
+								h3.add-mark-title
+									span Иванов Иван Иванович
+								.add-mark-block
+									span.add-mark-block-title Дата:
+									span 01.03.2021
+								.add-mark-block
+									span.add-mark-block-title Тема урока:
+									span Умная страничка. Повторяем, закрепляем.
+								.add-mark-block
+									.add-mark-block-title Оценка
+									.add-mark-block-row
+										input(type='text')
+										button(type='button' data-click-action='Front:addSpace').add-mark-block-H
+											span Н
+								.add-mark-block
+									.add-mark-block-title Комментарий
+									.add-mark-block-row
+										textarea
+								button.button
+									span Сохранить
+							.pop-bgc(data-click-action='Front:closePop')
+
 					

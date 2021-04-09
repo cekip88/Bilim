@@ -11,8 +11,8 @@ class Front extends _front{
       .on(_,'selectToActive')
       .on(_,'selectToInactive')
       .on(_,'showPop')
+      .on(_,'addSpace')
       .on(_,'closePop')
-      .on(_,'showMarkInput')
       .add(_.componentName,'showForm',_.showCardFileForm.bind(_));
 
   }
@@ -53,17 +53,14 @@ class Front extends _front{
   selectToInactive(clickData,another){
     let
       btn = clickData.item,
-      select = btn.parentElement,
+      select = btn.closest('.select'),
       value = btn.textContent;
-
-    if (!select.classList.contains('select')){
-      while(!select.classList.contains('select')){
-        select = select.parentElement;
-      }
-    }
 
     let head = select.querySelector('.select-head');
     if (!another){
+      if (btn.classList.contains('select-option')){
+        btn.parentElement.previousElementSibling.classList.add('choosen');
+      } else btn.parentElement.previousElementSibling.classList.remove('choosen');
       if (select.firstElementChild.tagName === 'INPUT') select.firstElementChild.value = value;
       head.firstElementChild.textContent = value;
     }
@@ -84,10 +81,19 @@ class Front extends _front{
     popBgc.classList.remove('active');
   }
 
-  showMarkInput(clickData){
-    let btn = clickData.item;
-    let inpt = btn.previousElementSibling;
-    inpt.classList.add('active');
+  addSpace(clickData){
+    let btn = clickData.item,
+        input = btn.previousElementSibling;
+    if (btn.classList.contains('active')) {
+      input.removeAttribute('disabled');
+      btn.classList.remove('active');
+      input.value = '';
+    } else {
+      input.setAttribute('disabled',true);
+      btn.classList.add('active');
+      input.value = 'Н';
+    }
   }
+
 }
 new Front();

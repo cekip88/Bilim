@@ -16,6 +16,7 @@ block content
 								span Класс
 								+img('select-arrow.svg')
 							.select-body
+								button(type='button' data-click-action='Front:selectToInactive').select-option Все классы
 								-for (let i = 1; i <= 4; i++)
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
 										|а класс
