@@ -1,0 +1,24 @@
+extends template/main
+append vars
+	-
+		page_title = 'Кабинет родителя'
+block content
+	main
+		section.journal.teacher
+			.section
+				h1.title
+					span Календарь
+				.journal-row
+					.block
+						a(href='/parent-schedule.html').journal-link
+							span Расписание
+					.block
+						a(href='/parent-tasks.html').journal-link
+							span Задания
+					.block
+						a(href='/parent-tabel.html').journal-link
+							span Табель
+					.block
+						a(href='/parent-calendar.html').journal-link.active
+							span Календарь
+				.journal-body

@@ -1,0 +1,93 @@
+extends template/main
+append vars
+	-
+		page_title = 'Кабинет родителя'
+block content
+	main
+		section.journal.teacher
+			.section
+				h1.title
+					span Задания
+				.journal-row
+					.block
+						a(href='/parent-schedule.html').journal-link
+							span Расписание
+					.block
+						a(href='/parent-tasks.html').journal-link.active
+							span Задания
+					.block
+						a(href='/parent-tabel.html').journal-link
+							span Табель
+					.block
+						a(href='/parent-calendar.html').journal-link
+							span Календарь
+				.journal-body.parents-tasks
+					.tabs
+						input(type='radio' name='tabs' checked)#tab-1
+						input(type='radio' name='tabs')#tab-2
+						.labels-row
+							label(for='tab-1') Невыполненные
+							label(for='tab-2') Выполненные
+						.tabs-row
+							.tab.tab-1
+								.tasks
+									.row
+										.select
+											input(type='hidden' name='class-select')
+											button(type='button' data-click-action='Front:selectToActive').select-head
+												span Число
+												+img('select-arrow.svg')
+											.select-body
+												-for (let i = 1; i <= 31; i++)
+													button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										.select
+											input(type='hidden' name='change-select')
+											button(type='button' data-click-action='Front:selectToActive').select-head
+												span Месяц
+												+img('select-arrow.svg')
+											.select-body
+												button(type='button' data-click-action='Front:selectToInactive').select-option Январь
+												button(type='button' data-click-action='Front:selectToInactive').select-option Февраль
+												button(type='button' data-click-action='Front:selectToInactive').select-option Март
+												button(type='button' data-click-action='Front:selectToInactive').select-option Апрель
+												button(type='button' data-click-action='Front:selectToInactive').select-option Май
+												button(type='button' data-click-action='Front:selectToInactive').select-option Июнь
+												button(type='button' data-click-action='Front:selectToInactive').select-option Июль
+												button(type='button' data-click-action='Front:selectToInactive').select-option Август
+												button(type='button' data-click-action='Front:selectToInactive').select-option Сентябрь
+												button(type='button' data-click-action='Front:selectToInactive').select-option Октябрь
+												button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
+												button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
+
+									form.tasks-form
+										h2.tasks-title Задание №1
+										span.tasks-subtitle За страницами школьного учебника
+										.add-mark-block
+											.add-mark-block-title Прикрепленные материалы:
+											.add-mark-block-row.add-file-row
+												.add-file-added
+													div
+														img(src="img/pdf.svg" alt="")
+														span Лекция1
+												.add-file-added
+													div
+														img(src="img/pdf.svg" alt="")
+														span Лекция2
+										.add-mark-block
+											.add-mark-block-title Ответ:
+											.add-mark-block-row
+												textarea
+										.add-mark-block
+											.add-mark-block-title Прикрепленные документы:
+											.add-mark-block-row.add-file-row
+												.add-file
+													input(type="file" data-change-action="Front:addFile")
+													div
+														img(src="img/big-plus.svg" alt="")
+										.add-mark-block
+											.add-mark-block-title Комментарий:
+											.add-mark-block-row
+												textarea
+										button.button
+											span Сохранить
+							.tab.tab-2

@@ -1,0 +1,81 @@
+extends template/main
+append vars
+	-
+		page_title = 'Кабинет родителя'
+block content
+	main
+		section.journal.teacher
+			.section
+				h1.title
+					span Расписание
+				.journal-row
+					.block
+						a(href='/parent-schedule.html').journal-link.active
+							span Расписание
+					.block
+						a(href='/parent-tasks.html').journal-link
+							span Задания
+					.block
+						a(href='/parent-tabel.html').journal-link
+							span Табель
+					.block
+						a(href='/parent-calendar.html').journal-link
+							span Календарь
+				.journal-body
+					.schedule-row
+						.select
+							input(type='hidden' name='class-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Число
+								+img('select-arrow.svg')
+							.select-body
+								-for (let i = 1; i <= 31; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+						.select
+							input(type='hidden' name='change-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Месяц
+								+img('select-arrow.svg')
+							.select-body
+								button(type='button' data-click-action='Front:selectToInactive').select-option Январь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Февраль
+								button(type='button' data-click-action='Front:selectToInactive').select-option Март
+								button(type='button' data-click-action='Front:selectToInactive').select-option Апрель
+								button(type='button' data-click-action='Front:selectToInactive').select-option Май
+								button(type='button' data-click-action='Front:selectToInactive').select-option Июнь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Июль
+								button(type='button' data-click-action='Front:selectToInactive').select-option Август
+								button(type='button' data-click-action='Front:selectToInactive').select-option Сентябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Октябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
+					.table.schedule-table
+						table
+							thead
+								tr
+									th
+										span Время
+									th
+										span ПН
+									th
+										span ВТ
+									th
+										span СР
+									th
+										span ЧТ
+									th
+										span ПТ
+									th
+										span СБ
+							tbody
+								-for (let i = 0; i < 8; i++)
+									tr
+										td
+											span 12:10-12:50
+										-for (let i = 0; i < 6; i++)
+											td
+												div
+													strong Математика
+													span Чабан Л.В.
+													i 1а
+													em (каб.105)

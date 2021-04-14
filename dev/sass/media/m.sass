@@ -438,7 +438,10 @@ main
 			text-align: center
 	&-row
 		@extend %df
+		min-height: 100%
 		overflow: hidden
+		.select
+			margin-right: 18px
 		.tab
 			@extend %transition
 			flex: 0 0 100%
@@ -615,7 +618,7 @@ main
 		td,th
 			&>span,&>div
 				&:nth-child(n)
-					padding: 16px 15px
+					padding: 30px 15px
 					justify-content: flex-start
 		td
 			&>div
@@ -655,5 +658,26 @@ main
 			img
 				margin-right: 10px
 	&-row
+		margin-top: 16px
 		align-items: stretch
 		flex-wrap: wrap
+.tasks
+	padding: 17px 0
+	&-form
+		max-width: 500px
+	.row
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		.select
+			margin-bottom: 10px
+	&-title
+		margin-bottom: 18px
+		font-family: $f_heavy
+		font-size: 24px
+		text-transform: uppercase
+	&-subtitle
+		font-family: $f_bold
+		color: #999999
+	.button
+		margin-top: 17px
