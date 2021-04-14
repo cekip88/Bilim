@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет преподавателя'
 block content
 	main
-		section.journal
+		section.journal.teacher
 			.section
 				h1.title
 					span Кабинет преподавателя
@@ -18,9 +18,6 @@ block content
 					.block
 						a(href='/teacher-plans.html').journal-link
 							span Планы
-					.block
-						a(href='/teacher-cabinets.html').journal-link
-							span Мои кабинеты
 					.block
 						a(href='/teacher-settings.html').journal-link
 							span Настройки
@@ -43,18 +40,44 @@ block content
 						.select
 							input(type='hidden' name='change-select')
 							button(type='button' data-click-action='Front:selectToActive').select-head
-								span Класс
+								span Смена
 								+img('select-arrow.svg')
 							.select-body
-								button(type='button' data-click-action='Front:selectToInactive').select-option Все классы
-								-for (let i = 1; i <= 4; i++)
+								button(type='button' data-click-action='Front:selectToInactive').select-option Все смены
+								-for (let i = 1; i <= 2; i++)
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|а класс
-									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|б класс
-									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-										|в класс
+										|&nbsp;смена
 						button.button
 							span Моё расписание
 						button.button
 							span 1А
+					.table.schedule-table
+						table
+							thead
+								tr
+									th
+										span Время
+									th
+										span ПН
+									th
+										span ВТ
+									th
+										span СР
+									th
+										span ЧТ
+									th
+										span ПТ
+									th
+										span СБ
+							tbody
+								-for (let i = 0; i < 8; i++)
+									tr
+										td
+											span 12:10-12:50
+										-for (let i = 0; i < 6; i++)
+											td
+												div
+													strong Математика
+													span Чабан Л.В.
+													i 1а
+													em (каб.105)

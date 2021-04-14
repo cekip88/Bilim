@@ -19,9 +19,6 @@ block content
 						a(href='/teacher-plans.html').journal-link.active
 							span Планы
 					.block
-						a(href='/teacher-cabinets.html').journal-link
-							span Мои кабинеты
-					.block
 						a(href='/teacher-settings.html').journal-link
 							span Настройки
 				.journal-body
@@ -48,6 +45,64 @@ block content
 							label(for='tab-4') 4 четверть
 						.tabs-row
 							.tab.tab-1
+								.table.teacher-plans-table
+									table
+										thead
+											tr
+												th
+													span №
+												th
+													span Тема
+												th
+													span Дата
+												th
+													span Домашнее задание
+												th
+													span Материалы
+												th
+													div Оценки
+										tbody
+											-for (let i = 0; i < 20; i++)
+												tr
+													td
+														span 1
+													td
+														span Техника безопасности.Обзор основных понятий здоровья
+													td
+														span 02.09.2021
+													td
+														span Повт.техн.безоп.
+													td
+														span 2020-09-01: 2021-05-25
+													td
+														div
+															button(data-click-action='Front:showPop' data-target='plans-add')
+																+img('eye.svg')
 							.tab.tab-2
 							.tab.tab-3
 							.tab.tab-4
+
+					.plans-add.pop.add-mark
+						form.add-mark-inner.pop-inner
+							h3.add-mark-title
+								span Физическая культура 1а
+							.add-mark-block
+								.add-mark-block-title Тема урока:
+								.add-mark-block-row
+									input(type='text')
+							.add-mark-block
+								.add-mark-block-title Дата проведения урока:
+								.add-mark-block-row
+									input(type='text')
+							.add-mark-block
+								.add-mark-block-title Домашнее задание:
+								.add-mark-block-row
+									textarea
+							.add-mark-block
+								.add-mark-block-title Материалы:
+								.add-mark-block-row.add-file-row
+									.add-file
+										input(type='file' data-change-action='Front:addFile')
+										div
+											+img('big-plus.svg')
+						.pop-bgc(data-click-action='Front:closePop')

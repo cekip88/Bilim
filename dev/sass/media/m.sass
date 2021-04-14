@@ -201,27 +201,32 @@ main
 		border-collapse: collapse
 	thead
 		border-bottom: 1px solid $blue
-		span,div
-			+font(16px,$f_bold,$black)
-			margin-bottom: -1px
-			border-bottom: 1px solid $blue
-			text-transform: uppercase
+		th
+			&>span,&>div
+				+font(16px,$f_bold,$black)
+				height: 55px
+				margin-bottom: -1px
+				padding: 0 15px
+				border-bottom: 1px solid $blue
+				text-transform: uppercase
 	tbody
 		tr
 			&:nth-child(2n - 1)
 				background-color: #F0F0F3
+		td
+			&>span,&>div
+				padding: 16px 15px
 	tr
 		min-width: 100%
-		td,th
-			&:first-child,&:last-child
-				div,span
-					padding: 0 5px
-					justify-content: center
-		div,span
+	td,th
+		&:first-child,&:last-child
+			&>div,&>span
+				padding: 16px 5px
+				justify-content: center
+		&>div,&>span
 			@extend %dfa
-			height: 55px
-			padding: 0 15px
-		div
+			text-align: left
+		&>div
 			button,a
 				margin-right: 10px
 				&:last-child
@@ -421,7 +426,7 @@ main
 		position: relative
 		z-index: 1
 .tabs
-	height: 100%
+	margin-bottom: 10px
 	.labels-row
 		@extend %dfa
 		border-bottom: 1px solid $blue
@@ -433,7 +438,6 @@ main
 			text-align: center
 	&-row
 		@extend %df
-		height: calc(100% - 31px)
 		overflow: hidden
 		.tab
 			@extend %transition
@@ -590,7 +594,7 @@ main
 .teacher
 	.journal
 		&-body
-			height: calc(100vh - 295px)
+			height: calc(100vh - 255px)
 .plans
 	&-row
 		@extend %dfi
@@ -598,8 +602,58 @@ main
 		.select
 			margin-right: 10px
 
-
-
-
-
-
+.schedule
+	&-row
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: space-between
+		&>.select,&>button
+			width: calc(50% - 5px)
+			margin-bottom: 10px
+	&-table
+		td,th
+			&>span,&>div
+				&:nth-child(n)
+					padding: 16px 15px
+					justify-content: flex-start
+		td
+			&>div
+				flex-direction: column
+				align-items: flex-start
+				strong
+					text-transform: uppercase
+					font-family: $f_bold
+				i
+					color: $red
+				em
+					color: $blue
+.add-file
+	+wh(80px)
+	flex: 0 0 80px
+	position: relative
+	input
+		opacity: 0
+		position: relative
+		z-index: 1
+	div
+		@extend %dfc
+		background-color: $orange
+		position: absolute
+		top: 0
+		left: 0
+	input,div
+		+wh(100%)
+	&,&-added
+		margin-right: 17px
+		margin-bottom: 10px
+	&-added
+		cursor: pointer
+		div
+			@extend %dfa
+			height: 100%
+			img
+				margin-right: 10px
+	&-row
+		align-items: stretch
+		flex-wrap: wrap

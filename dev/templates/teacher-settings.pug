@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет преподавателя'
 block content
 	main
-		section.journal
+		section.journal.teacher
 			.section
 				h1.title
 					span Кабинет преподавателя
@@ -19,9 +19,33 @@ block content
 						a(href='/teacher-plans.html').journal-link
 							span Планы
 					.block
-						a(href='/teacher-cabinets.html').journal-link
-							span Мои кабинеты
-					.block
 						a(href='/teacher-settings.html').journal-link.active
 							span Настройки
-				.journal-body
+				.pupil
+					.pupil-info
+						form
+							.pupil-input-block
+								span Имя
+								input(type='text' placeholder='Иван').pupil-input
+							.pupil-input-block
+								span Фамилия
+								input(type='text' placeholder='Иванов').pupil-input
+							.pupil-input-block
+								span Отчество
+								input(type='text' placeholder='Иванович').pupil-input
+							.pupil-input-block
+								span Дата рождения
+								input(type='text' placeholder='24.08.2008').pupil-input
+							.pupil-input-block
+								span ИИН
+								input(type='text' placeholder='080824366460').pupil-input
+							.pupil-input-block
+								span Национальность
+								input(type='text' placeholder='Русский').pupil-input
+					.pupil-photo
+						+img('no-photo.svg')
+						button.pupil-photo-button.close
+							+img('close.svg')
+						input(type='file' accept="image/*").pupil-photo-add
+						.pupil-photo-button.add
+							+img('close.svg')
