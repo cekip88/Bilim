@@ -15,6 +15,9 @@ class Front extends _front{
       .on(_,'closePop')
       .on(_,'addFile')
       .on(_,'removeFile')
+      .on(_,'burgerClick')
+      .on(_,'addPhoto')
+      .on(_,'removePhoto')
       .add(_.componentName,'showForm',_.showCardFileForm.bind(_));
 
   }
@@ -169,6 +172,35 @@ class Front extends _front{
   }
   removeFile(clickData){
     clickData.item.remove();
+  }
+
+  burgerClick(clickData){
+    let btn = clickData.item;
+    let head = btn.closest('.head');
+    head.classList.toggle('active')
+  }
+  addPhoto(changeAction){
+    let
+      input = changeAction.item,
+      cont = input.closest('.pupil-photo'),
+      img = cont.firstElementChild;
+    cont.classList.add('active');
+
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        img.setAttribute('src',e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  removePhoto(clickData){
+    let btn = clickData.item;
+    let cont = btn.closest('.pupil-photo'),img = cont.firstElementChild;
+    img.src = 'img/no-photo.svg';
+    cont.classList.remove('active');
+    let input = cont.querySelector('input[type="file"]');
+    input.value = '';
   }
 }
 new Front();

@@ -4,11 +4,31 @@
 	font-size: 42px
 main
 	padding-top: 150px
+.pop
+	&-inner
+		padding: 20px
 .head
 	padding: 38px 0
+	height: 110px
+	&.active
+		height: 110px
+	&-row
+		flex-wrap: nowrap
 	&-logo
 		flex-basis: 111px
 		font-size: 24px
+	&-burger
+		display: none
+	&-nav
+		margin: 0 auto
+		flex-basis: initial
+		flex-direction: row
+		&-link
+			margin: 0 20px 0 0
+	&-name
+		margin-right: 0
+	&-logout
+		margin-top: 2px
 
 .login
 	font-size: 14px
@@ -39,9 +59,7 @@ main
 .journal
 	&-row
 		padding: 0
-		justify-content: flex-start
 		.block
-			flex-basis: initial
 			height: 50px
 			padding: 0 10px
 			&-line
@@ -55,6 +73,9 @@ main
 		height: calc(100vh - 305px)
 		margin-top: 30px
 		padding: 19px
+		&.mini
+			height: calc(100vh - 345px)
+			margin-top: 10px
 .list
 	table
 		div
@@ -84,3 +105,6 @@ main
 	.journal
 		&-body
 			height: calc(100vh - 305px)
+.calendar
+	&-button
+		height: 90px

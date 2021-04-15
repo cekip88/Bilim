@@ -68,8 +68,8 @@ block content
 								input(type='text' placeholder='Русский').pupil-input
 					.pupil-photo
 						+img('no-photo.svg')
-						button.pupil-photo-button.close
+						button(data-click-action='Front:removePhoto').pupil-photo-button.close
 							+img('close.svg')
-						input(type='file' accept="image/*").pupil-photo-add
+						input(type='file' accept="image/*" data-change-action='Front:addPhoto').pupil-photo-add
 						.pupil-photo-button.add
 							+img('close.svg')

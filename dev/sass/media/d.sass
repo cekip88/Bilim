@@ -28,11 +28,14 @@ body
 			color: $white
 			background-color: $orange
 .head
-	&-logo,&-logout
+	&-logo,&-logout,&-nav-link
 		@extend %transition-desc
 	&-logo
 		&:hover
 			color: $orange
+	&-nav-link
+		&:hover
+			color: $viol
 	&-logout
 		&:hover
 			transform: scale(1.15)
@@ -102,3 +105,15 @@ body
 	.journal
 		&-body
 			height: calc(100vh - 325px)
+.tabel
+	&-details
+		&-link
+			@extend %transition-desc
+			&:hover
+				color: $blue
+
+.schedule
+	&-button
+		@extend %transition-desc
+		&:hover
+			background-color: $viol

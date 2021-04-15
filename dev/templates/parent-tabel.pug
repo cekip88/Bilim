@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет родителя'
 block content
 	main
-		section.journal.teacher
+		section.journal
 			.section
 				h1.title
 					span Табель
@@ -21,7 +21,21 @@ block content
 					.block
 						a(href='/parent-calendar.html').journal-link
 							span Календарь
-				.journal-body
+				.journal-row
+					.block
+						.select.wide
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Класс
+								+img('select-arrow.svg')
+							.select-body
+								-for (let i = 1; i < 4; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| а
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| б
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+										| в
+				.journal-body.mini
 					.tabs
 						input(type='radio' name='tabs' checked)#tab-1
 						input(type='radio' name='tabs')#tab-2
@@ -33,22 +47,47 @@ block content
 							label(for='tab-3') 3 четверть
 							label(for='tab-4') 4 четверть
 						.tabs-row
-							.tab.tab-1
-								ul.tabel-list
-									-for(let i = 0; i < 9; i++)
-										li.tabel-item
-											h3.tabel-title Математика
+							.tab.tab-1.marks
+								.marks-table
+									.marks-head
+										.row.marks-table-vertical
+											div
+												span №
+											div
+												span ФИО
+											div
+												span Казахский язык
+											div
+												span Русский язык
+											div
+												span Иностранный язык
+											div
+												span Музыка
+											div
+												span Физическая культура
+											div
+												span Естествознание
+											div
+												span Математика
+									.marks-body
+										-for (let i = 0; i < 5; i++)
 											.row
-												.left
-													-for(let i = 0; i < 8; i++)
-														span 7/10
-												.right
-													strong
-														span Сор:&nbsp;
-															em 14/14
-													strong
-														span Соч:&nbsp;
-															em 14/14
-							.tab.tab-2
-							.tab.tab-3
-							.tab.tab-4
+												div 1
+												div Иванов Иван Иванович
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+												div
+													a(href='/parent-tabel-details.html').tabel-details-link 5
+							.tab.tab-2.marks
+							.tab.tab-3.marks
+							.tab.tab-4.marks

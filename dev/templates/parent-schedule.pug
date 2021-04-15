@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет родителя'
 block content
 	main
-		section.journal.teacher
+		section.journal
 			.section
 				h1.title
 					span Расписание
@@ -21,8 +21,8 @@ block content
 					.block
 						a(href='/parent-calendar.html').journal-link
 							span Календарь
-				.journal-body
-					.schedule-row
+				.journal-row
+					.block
 						.select
 							input(type='hidden' name='class-select')
 							button(type='button' data-click-action='Front:selectToActive').select-head
@@ -31,6 +31,7 @@ block content
 							.select-body
 								-for (let i = 1; i <= 31; i++)
 									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+					.block
 						.select
 							input(type='hidden' name='change-select')
 							button(type='button' data-click-action='Front:selectToActive').select-head
@@ -49,6 +50,7 @@ block content
 								button(type='button' data-click-action='Front:selectToInactive').select-option Октябрь
 								button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
 								button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
+				.journal-body.mini
 					.table.schedule-table
 						table
 							thead

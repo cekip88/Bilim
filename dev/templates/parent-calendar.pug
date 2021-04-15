@@ -4,7 +4,7 @@ append vars
 		page_title = 'Кабинет родителя'
 block content
 	main
-		section.journal.teacher
+		section.journal
 			.section
 				h1.title
 					span Календарь
@@ -21,4 +21,66 @@ block content
 					.block
 						a(href='/parent-calendar.html').journal-link.active
 							span Календарь
-				.journal-body
+				.journal-row
+					.block
+						.select.wide
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Число
+								+img('select-arrow.svg')
+							.select-body
+								-for (let i = 1; i <= 31; i++)
+									button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+					.block
+						.select
+							input(type='hidden' name='change-select')
+							button(type='button' data-click-action='Front:selectToActive').select-head
+								span Месяц
+								+img('select-arrow.svg')
+							.select-body
+								button(type='button' data-click-action='Front:selectToInactive').select-option Январь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Февраль
+								button(type='button' data-click-action='Front:selectToInactive').select-option Март
+								button(type='button' data-click-action='Front:selectToInactive').select-option Апрель
+								button(type='button' data-click-action='Front:selectToInactive').select-option Май
+								button(type='button' data-click-action='Front:selectToInactive').select-option Июнь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Июль
+								button(type='button' data-click-action='Front:selectToInactive').select-option Август
+								button(type='button' data-click-action='Front:selectToInactive').select-option Сентябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Октябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
+								button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
+				.journal-body.mini
+					.calendar-table
+						.thead
+							.th
+								span ПН
+							.th
+								span ВТ
+							.th
+								span СР
+							.th
+								span ЧТ
+							.th
+								span ПТ
+							.th
+								span СБ
+							.th
+								span ВС
+						-for(let i = 0; i < 5; i++)
+							.row
+								-for(let i = 0; i < 7; i++)
+									.td
+										button(data-click-action='Front:showPop' data-target='calendar-info').calendar-button
+											span 1
+											strong !
+					.pop.calendar-info
+						.pop-inner
+							.info-date 13.01
+							ul.info-list
+								-for(let i = 0; i < 7; i++)
+									li.info-item
+										.info-number 1.
+										.info-desc
+											h5.info-desc-title Познание мира
+											span.info-desc-text Как дрвение пришли к производящему хозяйству
+						div(data-click-action='Front:closePop').pop-bgc

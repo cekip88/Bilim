@@ -3,6 +3,14 @@ header.head
 		.head-row
 			a(href='#').head-logo
 				span G-Teach
+			button(data-click-action='Front:burgerClick').head-burger
+				span
+				span
+				span
+			nav.head-nav
+				a(href='#').head-nav-link Журнал успеваемости
+				a(href='#').head-nav-link Кабинет преподавателя
+				a(href='#').head-nav-link Картотека учащихся
 			span.head-name Чабан Людмила Валентиновна
 			button.head-logout
 				+img('logout.svg')
