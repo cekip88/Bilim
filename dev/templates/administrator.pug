@@ -45,7 +45,6 @@ block content
 								button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
 								button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
 				.journal-body
-
 					.table.schedule-table
 						table
 							thead
@@ -78,35 +77,31 @@ block content
 													em (каб.105)
 					.pop.add-day
 						.pop-inner
-							h2.title
-								span Иванов Иван Иванович
+							h3.title Добавление урока
 							.row
 								.select
 									input(type='hidden' name='change-select')
 									button(type='button' data-click-action='Front:selectToActive').select-head
-										span Число
+										span Класс
 										+img('select-arrow.svg')
 									.select-body
-										-for(let i = 1; i <= 31; i++)
+										-for (let i = 1; i <= 4; i++)
 											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+												| а
+											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+												| б
+											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
+												| в
 								.select
 									input(type='hidden' name='change-select')
 									button(type='button' data-click-action='Front:selectToActive').select-head
-										span Месяц
+										span Четверть
 										+img('select-arrow.svg')
 									.select-body
-										button(type='button' data-click-action='Front:selectToInactive').select-option Январь
-										button(type='button' data-click-action='Front:selectToInactive').select-option Февраль
-										button(type='button' data-click-action='Front:selectToInactive').select-option Март
-										button(type='button' data-click-action='Front:selectToInactive').select-option Апрель
-										button(type='button' data-click-action='Front:selectToInactive').select-option Май
-										button(type='button' data-click-action='Front:selectToInactive').select-option Июнь
-										button(type='button' data-click-action='Front:selectToInactive').select-option Июль
-										button(type='button' data-click-action='Front:selectToInactive').select-option Август
-										button(type='button' data-click-action='Front:selectToInactive').select-option Сентябрь
-										button(type='button' data-click-action='Front:selectToInactive').select-option Октябрь
-										button(type='button' data-click-action='Front:selectToInactive').select-option Ноябрь
-										button(type='button' data-click-action='Front:selectToInactive').select-option Декабрь
+										button(type='button' data-click-action='Front:selectToInactive').select-option 1
+										button(type='button' data-click-action='Front:selectToInactive').select-option 2
+										button(type='button' data-click-action='Front:selectToInactive').select-option 3
+										button(type='button' data-click-action='Front:selectToInactive').select-option 4
 								.select
 									input(type='hidden' name='change-select')
 									button(type='button' data-click-action='Front:selectToActive').select-head
@@ -119,17 +114,20 @@ block content
 										button(type='button' data-click-action='Front:selectToInactive').select-option Четверг
 										button(type='button' data-click-action='Front:selectToInactive').select-option Пятница
 										button(type='button' data-click-action='Front:selectToInactive').select-option Суббота
-							.add-day-date
-								strong Дата:&nbsp;
-								span 01.03
 							.row
-								.add-day-input-block
-									span Предмет
-									input(type='text').add-day-input
-								.add-day-input-block
-									span Кабинет
-									input(type='text').add-day-input
-							.row
+								.select
+									input(type='hidden' name='change-select')
+									button(type='button' data-click-action='Front:selectToActive').select-head
+										span Предмет
+										+img('select-arrow.svg')
+									.select-body
+										button(type='button' data-click-action='Front:selectToInactive').select-option Русский язык
+										button(type='button' data-click-action='Front:selectToInactive').select-option Казахский язык
+										button(type='button' data-click-action='Front:selectToInactive').select-option Иностранный язык
+										button(type='button' data-click-action='Front:selectToInactive').select-option Математика
+										button(type='button' data-click-action='Front:selectToInactive').select-option Природоведение
+										button(type='button' data-click-action='Front:selectToInactive').select-option Труд
+										button(type='button' data-click-action='Front:selectToInactive').select-option Физическая культура
 								.select
 									input(type='hidden' name='change-select')
 									button(type='button' data-click-action='Front:selectToActive').select-head
@@ -141,16 +139,12 @@ block content
 								.select
 									input(type='hidden' name='change-select')
 									button(type='button' data-click-action='Front:selectToActive').select-head
-										span Класс
+										span Кабинет
 										+img('select-arrow.svg')
 									.select-body
-										-for(let i = 1; i <= 4; i++)
+										-for(let i = 100; i < 105; i++)
 											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-												| а
-											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-												| б
-											button(type='button' data-click-action='Front:selectToInactive').select-option!=i
-												| в
+
 							button.button
 								span Добавить
 						div(data-click-action='Front:closePop').pop-bgc

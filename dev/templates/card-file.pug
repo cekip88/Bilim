@@ -107,61 +107,88 @@ block content
 									th
 										span #
 							tbody
-								tr
-									td
-										span 1
-									td
-										span Иванов
-									td
-										span Иван
-									td
-										span Иванович
-									td
-										span 1а
-									td
-										span ул.Металлистов д.150 кв.2
-									td
-										div
-											a(href='/pupil-file.html')
-												+img('pencil.svg')
-											button
-												+img('parents.svg')
-								tr
-									td
-										span 1
-									td
-										span Иванов
-									td
-										span Иван
-									td
-										span Иванович
-									td
-										span 1а
-									td
-										span ул.Металлистов д.150 кв.2
-									td
-										div
-											a(href='/pupil-file.html')
-												+img('pencil.svg')
-											button
-												+img('parents.svg')
-								tr
-									td
-										span 1
-									td
-										span Иванов
-									td
-										span Иван
-									td
-										span Иванович
-									td
-										span 1а
-									td
-										span ул.Металлистов д.150 кв.2
-									td
-										div
-											a(href='/pupil-file.html')
-												+img('pencil.svg')
-											button
-												+img('parents.svg')
-
+								-for (let i = 1; i < 6; i++)
+									tr
+										td
+											span!=i
+										td
+											span Иванов
+										td
+											span Иван
+										td
+											span Иванович
+										td
+											span 1а
+										td
+											span ул.Металлистов д.150 кв.2
+										td
+											div
+												a(href='/pupil-file.html')
+													+img('pencil.svg')
+												button(data-click-action='Front:showPop' data-target='card-parents')
+													+img('parents.svg')
+				.pop.card-parents
+					.pop-inner
+						.pupil-parents
+							.row
+								.col
+									.parents-photo
+										+img('mother.svg')
+									.parents-info
+										span.parents-info-title Фамилия
+										span.parents-info-text Давыдова
+									.parents-info
+										span.parents-info-title Имя
+										span.parents-info-text Мария
+									.parents-info
+										span.parents-info-title Отчество
+										span.parents-info-text Александровна
+									.parents-info
+										span.parents-info-title Телефон
+										span.parents-info-text +7 777 777 77 77
+									.parents-info
+										span.parents-info-title E-mail
+										span.parents-info-text DAMari@mail.ru
+									.parents-info
+										span.parents-info-title Дата рождения
+										span.parents-info-text 03.06.1954
+									.parents-info
+										span.parents-info-title Место работы
+										span.parents-info-text ОАО "СельхозМашины"
+									.parents-info
+										span.parents-info-title Должность
+										span.parents-info-text Тракторист
+									.parents-info
+										span.parents-info-title Адрес
+										span.parents-info-text г.Костанай ул.Ленина д.503 кв.106
+								.col
+									.parents-photo
+										+img('father.svg')
+									.parents-info
+										span.parents-info-title Фамилия
+										span.parents-info-text Давыдов
+									.parents-info
+										span.parents-info-title Имя
+										span.parents-info-text Святозар
+									.parents-info
+										span.parents-info-title Отчество
+										span.parents-info-text Ярославович
+									.parents-info
+										span.parents-info-title Телефон
+										span.parents-info-text +7 777 777 77 77
+									.parents-info
+										span.parents-info-title E-mail
+										span.parents-info-text TheBest@selHozMash.ru
+									.parents-info
+										span.parents-info-title Дата рождения
+										span.parents-info-text 25.08.1952
+									.parents-info
+										span.parents-info-title Место работы
+										span.parents-info-text ОАО "СельхозМашины"
+									.parents-info
+										span.parents-info-title Должность
+										span.parents-info-text Директор
+									.parents-info
+										span.parents-info-title Адрес
+										span.parents-info-text г.Костанай ул.Ленина д.503 кв.106
+					.pop-bgc(data-click-action='Front:closePop')
